@@ -1,0 +1,676 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.2' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     28536,        668]
+NotebookOptionsPosition[     25590,        609]
+NotebookOutlinePosition[     26486,        636]
+CellTagsIndexPosition[     26405,        631]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Calculation of Nash-Harsanyi Solutions
+Maanav Jhatakia
+MSc. Engineering and Policy Analysis, Delft University of Technology
+May 2023
+
+The following is a PDF of the code used for the calculation of symmetric and \
+asymmetric Nash-Harsanyi solutions. \
+\>", "Text",
+ CellChangeTimes->{{3.8931190688548183`*^9, 
+  3.893119169221612*^9}},ExpressionUUID->"05b52339-22a8-4215-8a14-\
+7bcac347b3a3"],
+
+Cell[BoxData[
+ RowBox[{"\[IndentingNewLine]", 
+  RowBox[{"(*", 
+   RowBox[{
+   "The", " ", "following", " ", "characteristic", " ", "value", " ", 
+    "functions", " ", "have", " ", "each", " ", "been", " ", "divided", " ", 
+    "by", " ", "1", "e9", " ", "for", " ", "sake", " ", "of", " ", 
+    RowBox[{"Mathematica", "'"}], "s", " ", "algorithm", " ", "convergence"}],
+    "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"ve", "=", "5.125744170"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"vs", "=", "0.460925711"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"vet", "=", "0.463206226"}], ";"}], "\n", 
+   RowBox[{
+    RowBox[{"vgc", "=", "6.681922000"}], ";"}]}]}]], "Input",
+ CellChangeTimes->{{3.889123816150093*^9, 3.889123855107099*^9}, {
+  3.889123907915371*^9, 3.889123911918171*^9}, {3.8891243173429527`*^9, 
+  3.889124322068782*^9}, {3.88912435921586*^9, 3.889124363127039*^9}, {
+  3.889133546580492*^9, 3.889133551329541*^9}, {3.889794228885562*^9, 
+  3.889794241915291*^9}, {3.889798063675275*^9, 3.889798075718582*^9}, {
+  3.889799310249537*^9, 3.889799397213628*^9}, {3.8922066637291107`*^9, 
+  3.89220666512983*^9}, {3.893118996029357*^9, 3.8931190336208267`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"38bf241b-32a5-43e0-a85f-64b593a91750"],
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", "ve"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"y", "-", "vs"}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "vet"}], ")"}]}], ",", 
+     RowBox[{
+      RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ", 
+      "vgc"}], ",", " ", 
+     RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+     RowBox[{"y", " ", ">=", "vs"}], ",", 
+     RowBox[{"z", ">=", "vet"}], ",", " ", 
+     RowBox[{"x", ">", "0"}], ",", 
+     RowBox[{"y", ">", "0"}], ",", 
+     RowBox[{"z", ">", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8891239587662563`*^9, 3.8891239625608253`*^9}, {
+   3.889124090712047*^9, 3.889124162600979*^9}, 3.8891244187176523`*^9, {
+   3.889124522457691*^9, 3.889124545009921*^9}, 3.8897954552763157`*^9, {
+   3.8902426016171083`*^9, 3.890242604584696*^9}, {3.890242813424057*^9, 
+   3.8902428228865747`*^9}, {3.890243140414816*^9, 3.890243141413126*^9}},
+ CellTags->"Maximize_templates",
+ CellLabel->"In[5]:=",ExpressionUUID->"031832e8-bdb6-4593-845c-5c6901e4a573"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.00935151719593653`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "5.336426131786796`"}], ",", 
+     RowBox[{"y", "\[Rule]", "0.6716076786380306`"}], ",", 
+     RowBox[{"z", "\[Rule]", "0.6738881895751727`"}]}], "}"}]}], 
+  "}"}]], "Input",
+ CellChangeTimes->{3.893119142863105*^9},
+ CellTags->"Maximize_templates",
+ CellLabel->"In[5]:=",ExpressionUUID->"0399d59f-c2e9-4d6a-a617-3c391ff742cc"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.00935151719593653`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "5.336426131786796`"}], ",", 
+     RowBox[{"y", "\[Rule]", "0.6716076786380306`"}], ",", 
+     RowBox[{"z", "\[Rule]", "0.6738881895751727`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.893119235336465*^9},
+ CellTags->"Maximize_templates",
+ CellLabel->"Out[5]=",ExpressionUUID->"b9fd08e9-fe84-4b27-9b28-4fe40862b1ec"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"x", "-", "ve"}], ")"}], "+", 
+      RowBox[{"(", 
+       RowBox[{"y", "-", "vs"}], ")"}], "+", 
+      RowBox[{"(", 
+       RowBox[{"z", "-", "vet"}], ")"}]}], ",", 
+     RowBox[{
+      RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ", 
+      "vgc"}], ",", " ", 
+     RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+     RowBox[{"y", " ", ">=", "vs"}], ",", 
+     RowBox[{"z", ">=", "vet"}], ",", " ", 
+     RowBox[{"x", ">", "0"}], ",", 
+     RowBox[{"y", ">", "0"}], ",", 
+     RowBox[{"z", ">", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.890243148889529*^9, 3.890243161379818*^9}, {
+  3.8902432949580383`*^9, 3.8902432960254593`*^9}, {3.890244531473888*^9, 
+  3.8902445336616783`*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"5204c5ed-06cc-4477-8cd3-c7a0df18462d"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.6320458930000008`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "5.12574417`"}], ",", 
+     RowBox[{"y", "\[Rule]", "0.460925711`"}], ",", 
+     RowBox[{"z", "\[Rule]", "1.0952521190000004`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.890243256796258*^9, 3.8902432968176727`*^9, 
+  3.890244534165172*^9, 3.890473589617621*^9, 3.893119238138424*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"8b549f28-3c70-4365-96aa-947d569bcf32"]
+}, Open  ]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"alpha1", " ", "=", " ", "0.75"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"alpha2", " ", "=", " ", "0.15"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"alpha3", " ", "=", "0.10"}], ";"}]}], "Input",
+ CellChangeTimes->{{3.889136735555554*^9, 3.889136764231668*^9}, {
+  3.889136979579507*^9, 3.889136980232752*^9}, {3.889137048074588*^9, 
+  3.889137052848814*^9}, {3.889631389582532*^9, 3.889631389950117*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"d07d5af6-7dbc-4cad-8294-5f5d2ae8fb7c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"x", "-", "ve"}], ")"}], "^", 
+        RowBox[{"(", "alpha1", ")"}]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"y", "-", "vs"}], ")"}], "^", 
+        RowBox[{"(", "alpha2", ")"}]}], ")"}], "*", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"z", "-", "vet"}], ")"}], "^", 
+        RowBox[{"(", "alpha3", ")"}]}], ")"}]}], ",", 
+     RowBox[{
+      RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ", 
+      "vgc"}], ",", " ", 
+     RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+     RowBox[{"y", " ", ">=", "vs"}], ",", 
+     RowBox[{"z", ">=", "vet"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8891364775010033`*^9, 3.889136591882373*^9}, {
+  3.889136718487822*^9, 3.889136726690221*^9}, {3.889136770545718*^9, 
+  3.889136771247106*^9}, {3.889136992422146*^9, 3.8891369978394117`*^9}, {
+  3.889639515691535*^9, 3.889639562090824*^9}, {3.889639841045617*^9, 
+  3.8896398712426453`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"dac2bf37-0a70-496c-9414-fbc132ab4edf"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.3044095338532402`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "5.59977858975`"}], ",", 
+     RowBox[{"y", "\[Rule]", "0.55573259495`"}], ",", 
+     RowBox[{"z", "\[Rule]", "0.5264108153`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.889136551363371*^9, 3.88913659354298*^9, 3.889136728748741*^9, {
+   3.8891367720284653`*^9, 3.88913679420197*^9}, {3.8891369841501513`*^9, 
+   3.889137056867701*^9}, 3.8895691807543373`*^9, {3.889631393484105*^9, 
+   3.889631410257745*^9}, 3.889639588067984*^9, 3.889640055737486*^9, 
+   3.889794360495668*^9, 3.8897948891312733`*^9, 3.889795256833374*^9, 
+   3.889795466552145*^9, {3.88979608626519*^9, 3.889796089568449*^9}, 
+   3.889796644128665*^9, 3.8897978111069927`*^9, 3.889798087379476*^9, 
+   3.8897987799850082`*^9, 3.8901757807331467`*^9, 3.890473596781798*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"0a99a5a0-1bde-4f3d-8999-f8ba0e04f2e1"]
+}, Open  ]],
+
+Cell["\<\
+In this, we first assume the dominant player to be Egypt (alpha1).\
+\[LineSeparator]\
+\>", "Text",
+ CellChangeTimes->{{3.8891349914005423`*^9, 3.8891350080553703`*^9}, {
+  3.889794890518486*^9, 3.889794892317129*^9}, {3.8897952582971983`*^9, 
+  3.889795258903947*^9}, {3.889796645023594*^9, 3.8897966459631777`*^9}, {
+  3.8931191475154*^9, 
+  3.8931191482888803`*^9}},ExpressionUUID->"59a04e6b-68ad-4278-93a8-\
+58879863e897"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Maximize", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"(*", 
+       RowBox[{"Objective", " ", "function"}], "*)"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "ve"}], ")"}], "^", 
+          RowBox[{"(", "alpha1", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"y", "-", "vs"}], ")"}], "^", 
+          RowBox[{"(", "alpha2", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z", "-", "vet"}], ")"}], "^", 
+          RowBox[{"(", "alpha3", ")"}]}], ")"}]}], ",", 
+       RowBox[{"(*", "Constraints", "*)"}], 
+       RowBox[{
+        RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ",
+         "vgc"}], ",", " ", 
+       RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+       RowBox[{"y", " ", ">=", "vs"}], ",", 
+       RowBox[{"z", ">=", "vet"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha1", ",", "0", ",", "1", ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha2", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha1", "-", "alpha3"}], ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha3", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha1", "-", "alpha2"}], ",", "0.05"}], "}"}], ",", 
+   " ", 
+   RowBox[{"DynamicWrapper", "[", 
+    RowBox[{"\"\<\>\"", ",", 
+     RowBox[{"Export", "[", 
+      RowBox[{"\"\<test.csv\>\"", ",", 
+       RowBox[{"{", 
+        RowBox[{
+        "alpha1", ",", " ", "alpha2", ",", " ", "alpha3", ",", " ", "x", ",", 
+         " ", "y", ",", " ", "z"}], "}"}], ",", "\"\<CSV\>\""}], "]"}]}], 
+    "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.8891268251112013`*^9, 3.8891268251179667`*^9}, {
+   3.889126873018188*^9, 3.889126882638815*^9}, {3.889133802056802*^9, 
+   3.889133810357435*^9}, {3.889134383866666*^9, 3.8891344876254797`*^9}, {
+   3.8891350218184032`*^9, 3.889135033436507*^9}, {3.889135155132504*^9, 
+   3.889135227189454*^9}, {3.889135971893705*^9, 3.889135973000639*^9}, {
+   3.88913615009067*^9, 3.889136251369623*^9}, {3.8891365405580273`*^9, 
+   3.8891365414219713`*^9}, {3.889137487724202*^9, 3.88913748997288*^9}, {
+   3.889137696985338*^9, 3.889137701212406*^9}, 3.8891380350257883`*^9, {
+   3.8891381319264517`*^9, 3.889138142149714*^9}, {3.889138282200408*^9, 
+   3.8891382982081413`*^9}, {3.8896316701666737`*^9, 3.889631728009996*^9}, {
+   3.889631791607313*^9, 3.889631842991271*^9}, {3.889632445059001*^9, 
+   3.889632502362431*^9}, {3.889632580157106*^9, 3.889632597327298*^9}, 
+   3.88979547151334*^9},
+ CellLabel->"In[10]:=",ExpressionUUID->"88a62d9a-2285-4bdc-bbda-8bd6b2223880"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+    0, $CellContext`alpha3$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`alpha1$$], 0, 1, 0.05}, {
+      Hold[$CellContext`alpha2$$], 0, 
+      Dynamic[1 - $CellContext`alpha1$$ - $CellContext`alpha3$$], 0.05}, {
+      Hold[$CellContext`alpha3$$], 0, 
+      Dynamic[1 - $CellContext`alpha1$$ - $CellContext`alpha2$$], 0.05}, {
+      Hold[
+       DynamicWrapper["", 
+        Export[
+        "test.csv", {$CellContext`alpha1$$, $CellContext`alpha2$$, \
+$CellContext`alpha3$$, $CellContext`x, $CellContext`y, $CellContext`z}, 
+         "CSV"]]], Manipulate`Dump`ThisIsNotAControl}}, Typeset`size$$ = {
+    333., {3., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+        0, $CellContext`alpha3$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Maximize[{($CellContext`x - $CellContext`ve)^$CellContext`alpha1$$ \
+($CellContext`y - $CellContext`vs)^$CellContext`alpha2$$ ($CellContext`z - \
+$CellContext`vet)^$CellContext`alpha3$$, $CellContext`x + $CellContext`y + \
+$CellContext`z == $CellContext`vgc, $CellContext`x >= $CellContext`ve, \
+$CellContext`y >= $CellContext`vs, $CellContext`z >= $CellContext`vet}, \
+{$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`alpha1$$, 0, 1, 
+         0.05}, {$CellContext`alpha2$$, 0, 
+         Dynamic[1 - $CellContext`alpha1$$ - $CellContext`alpha3$$], 
+         0.05}, {$CellContext`alpha3$$, 0, 
+         Dynamic[1 - $CellContext`alpha1$$ - $CellContext`alpha2$$], 0.05}, 
+        DynamicWrapper["", 
+         Export[
+         "test.csv", {$CellContext`alpha1$$, $CellContext`alpha2$$, \
+$CellContext`alpha3$$, $CellContext`x, $CellContext`y, $CellContext`z}, 
+          "CSV"]]}, "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{377., {86., 91.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{{3.8896325422456093`*^9, 3.889632549681072*^9}, 
+   3.889632600789399*^9, {3.889632632016663*^9, 3.889632634441595*^9}, {
+   3.8897943634929323`*^9, 3.889794370838299*^9}, {3.889794893852003*^9, 
+   3.889794900511252*^9}, 3.8897952614911213`*^9, {3.889795473434833*^9, 
+   3.889795478227003*^9}, {3.8897959299948387`*^9, 3.889795945123458*^9}, 
+   3.8897960920168953`*^9, 3.889796647312414*^9, {3.889797520874*^9, 
+   3.8897975224598827`*^9}, 3.8897978111615334`*^9, 3.889798090623539*^9, 
+   3.889798781587822*^9, {3.889799272105979*^9, 3.889799274271789*^9}, 
+   3.8904735996213617`*^9, 3.893119242297037*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"9fd89833-2bf8-4dd2-9e81-363f823cda04"]
+}, Open  ]],
+
+Cell["Now, we assume Sudan to be the dominant player \
+(alpha2).\[LineSeparator]", "Text",
+ CellChangeTimes->{{3.889138467440877*^9, 3.8891384816319323`*^9}, 
+   3.8897952639684677`*^9},ExpressionUUID->"a82a9edf-d33c-44fc-bdeb-\
+f693d2ef3730"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Maximize", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"(*", 
+       RowBox[{"Objective", " ", "function"}], "*)"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "ve"}], ")"}], "^", 
+          RowBox[{"(", "alpha1", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"y", "-", "vs"}], ")"}], "^", 
+          RowBox[{"(", "alpha2", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z", "-", "vet"}], ")"}], "^", 
+          RowBox[{"(", "alpha3", ")"}]}], ")"}]}], ",", 
+       RowBox[{"(*", "Constraints", "*)"}], 
+       RowBox[{
+        RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ",
+         "vgc"}], ",", " ", 
+       RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+       RowBox[{"y", " ", ">=", "vs"}], ",", 
+       RowBox[{"z", ">=", "vet"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha1", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha2", "-", "alpha3"}], ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha2", ",", "0", ",", "1", ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha3", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha2", "-", "alpha1"}], ",", "0.05"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.889138493655664*^9, 3.889138510150681*^9}, {
+   3.889138542680613*^9, 3.889138542771546*^9}, 3.889795428188797*^9, {
+   3.889796180507079*^9, 3.889796186589993*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"77115a32-4708-4e8a-b551-5fbb305a3461"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+    0, $CellContext`alpha3$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`alpha1$$], 0, 
+      Dynamic[1 - $CellContext`alpha2$$ - $CellContext`alpha3$$], 0.05}, {
+      Hold[$CellContext`alpha2$$], 0, 1, 0.05}, {
+      Hold[$CellContext`alpha3$$], 0, 
+      Dynamic[1 - $CellContext`alpha2$$ - $CellContext`alpha1$$], 0.05}}, 
+    Typeset`size$$ = {333., {3., 9.}}, Typeset`update$$ = 0, 
+    Typeset`initDone$$, Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+        0, $CellContext`alpha3$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Maximize[{($CellContext`x - $CellContext`ve)^$CellContext`alpha1$$ \
+($CellContext`y - $CellContext`vs)^$CellContext`alpha2$$ ($CellContext`z - \
+$CellContext`vet)^$CellContext`alpha3$$, $CellContext`x + $CellContext`y + \
+$CellContext`z == $CellContext`vgc, $CellContext`x >= $CellContext`ve, \
+$CellContext`y >= $CellContext`vs, $CellContext`z >= $CellContext`vet}, \
+{$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`alpha1$$, 0, 
+         Dynamic[1 - $CellContext`alpha2$$ - $CellContext`alpha3$$], 
+         0.05}, {$CellContext`alpha2$$, 0, 1, 0.05}, {$CellContext`alpha3$$, 
+         0, 
+         Dynamic[1 - $CellContext`alpha2$$ - $CellContext`alpha1$$], 0.05}}, 
+      "Options" :> {}, "DefaultOptions" :> {}],
+     ImageSizeCache->{377., {79., 85.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{
+  3.8891385129339943`*^9, 3.8891385432828283`*^9, 3.8895691864591093`*^9, {
+   3.889633754532475*^9, 3.889633756164398*^9}, {3.889795265546214*^9, 
+   3.889795270597644*^9}, 3.8897954290618477`*^9, {3.889795483363965*^9, 
+   3.889795503346653*^9}, 3.889796094774975*^9, {3.889796196235198*^9, 
+   3.889796200958589*^9}, 3.889796650363196*^9, 3.889797811247991*^9, 
+   3.889798107466569*^9, {3.8897987838471518`*^9, 3.889798793930447*^9}, {
+   3.890473602174224*^9, 3.890473610332316*^9}, 3.893119245183893*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"30abb031-258f-42ad-a9ce-0399709e0130"]
+}, Open  ]],
+
+Cell["Now, we assume Ethiopia to be the dominant player (alpha3). ", "Text",
+ CellChangeTimes->{{3.889138573845244*^9, 
+  3.8891386037549667`*^9}},ExpressionUUID->"e9bad6e9-8c32-4f9f-a8c4-\
+c2c96c354dab"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Manipulate", "[", 
+  RowBox[{
+   RowBox[{"Maximize", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"(*", 
+       RowBox[{"Objective", " ", "function"}], "*)"}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"x", "-", "ve"}], ")"}], "^", 
+          RowBox[{"(", "alpha1", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"y", "-", "vs"}], ")"}], "^", 
+          RowBox[{"(", "alpha2", ")"}]}], ")"}], "*", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"z", "-", "vet"}], ")"}], "^", 
+          RowBox[{"(", "alpha3", ")"}]}], ")"}]}], ",", 
+       RowBox[{"(*", "Constraints", "*)"}], 
+       RowBox[{
+        RowBox[{"x", " ", "+", " ", "y", " ", "+", " ", "z"}], " ", "==", " ",
+         "vgc"}], ",", 
+       RowBox[{"x", " ", ">=", "ve"}], ",", " ", 
+       RowBox[{"y", " ", ">=", "vs"}], ",", 
+       RowBox[{"z", ">=", "vet"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha1", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha3", "-", "alpha2"}], ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha2", ",", "0", ",", 
+     RowBox[{"1", "-", "alpha3", "-", "alpha1"}], ",", "0.05"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"alpha3", ",", "0", ",", "1", ",", "0.05"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.889138606246986*^9, 3.889138639330049*^9}, 
+   3.889635920893998*^9, {3.889797094830512*^9, 3.889797095549666*^9}, {
+   3.8897971465301647`*^9, 3.8897971477164307`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"fd667047-d50f-418d-85be-dbe9193d0dbb"],
+
+Cell[BoxData[
+ TagBox[
+  StyleBox[
+   DynamicModuleBox[{$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+    0, $CellContext`alpha3$$ = 0, Typeset`show$$ = True, 
+    Typeset`bookmarkList$$ = {}, Typeset`bookmarkMode$$ = "Menu", 
+    Typeset`animator$$, Typeset`animvar$$ = 1, Typeset`name$$ = 
+    "\"untitled\"", Typeset`specs$$ = {{
+      Hold[$CellContext`alpha1$$], 0, 
+      Dynamic[1 - $CellContext`alpha3$$ - $CellContext`alpha2$$], 0.05}, {
+      Hold[$CellContext`alpha2$$], 0, 
+      Dynamic[1 - $CellContext`alpha3$$ - $CellContext`alpha1$$], 0.05}, {
+      Hold[$CellContext`alpha3$$], 0, 1, 0.05}}, Typeset`size$$ = {
+    333., {3., 9.}}, Typeset`update$$ = 0, Typeset`initDone$$, 
+    Typeset`skipInitDone$$ = True}, 
+    DynamicBox[Manipulate`ManipulateBoxes[
+     1, StandardForm, 
+      "Variables" :> {$CellContext`alpha1$$ = 0, $CellContext`alpha2$$ = 
+        0, $CellContext`alpha3$$ = 0}, "ControllerVariables" :> {}, 
+      "OtherVariables" :> {
+       Typeset`show$$, Typeset`bookmarkList$$, Typeset`bookmarkMode$$, 
+        Typeset`animator$$, Typeset`animvar$$, Typeset`name$$, 
+        Typeset`specs$$, Typeset`size$$, Typeset`update$$, Typeset`initDone$$,
+         Typeset`skipInitDone$$}, "Body" :> 
+      Maximize[{($CellContext`x - $CellContext`ve)^$CellContext`alpha1$$ \
+($CellContext`y - $CellContext`vs)^$CellContext`alpha2$$ ($CellContext`z - \
+$CellContext`vet)^$CellContext`alpha3$$, $CellContext`x + $CellContext`y + \
+$CellContext`z == $CellContext`vgc, $CellContext`x >= $CellContext`ve, \
+$CellContext`y >= $CellContext`vs, $CellContext`z >= $CellContext`vet}, \
+{$CellContext`x, $CellContext`y, $CellContext`z}], 
+      "Specifications" :> {{$CellContext`alpha1$$, 0, 
+         Dynamic[1 - $CellContext`alpha3$$ - $CellContext`alpha2$$], 
+         0.05}, {$CellContext`alpha2$$, 0, 
+         Dynamic[1 - $CellContext`alpha3$$ - $CellContext`alpha1$$], 
+         0.05}, {$CellContext`alpha3$$, 0, 1, 0.05}}, "Options" :> {}, 
+      "DefaultOptions" :> {}],
+     ImageSizeCache->{377., {79., 85.}},
+     SingleEvaluation->True],
+    Deinitialization:>None,
+    DynamicModuleValues:>{},
+    SynchronousInitialization->True,
+    UndoTrackedVariables:>{Typeset`show$$, Typeset`bookmarkMode$$},
+    UnsavedVariables:>{Typeset`initDone$$},
+    UntrackedVariables:>{Typeset`size$$}], "Manipulate",
+   Deployed->True,
+   StripOnInput->False],
+  Manipulate`InterpretManipulate[1]]], "Output",
+ CellChangeTimes->{3.8931192472825127`*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"48dd52b4-541b-4258-93cb-f38b151d14ae"]
+}, Open  ]],
+
+Cell[BoxData["\[IndentingNewLine]"], "Input",
+ CellChangeTimes->{{3.890255824450679*^9, 3.890255847743833*^9}, {
+  3.893119249627864*^9, 
+  3.893119251509471*^9}},ExpressionUUID->"fcc6ed73-c956-4dcb-a96f-\
+530b0685f066"]
+},
+WindowSize->{1314, 960},
+WindowMargins->{{20, Automatic}, {Automatic, 0}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.2 for Mac OS X ARM (64-bit) (January 30, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"01ba1802-0261-4a12-bfb7-7b5fb8e2730e"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "Maximize_templates"->{
+  Cell[2236, 60, 1227, 29, 30, "Input",ExpressionUUID->"031832e8-bdb6-4593-845c-5c6901e4a573",
+   CellTags->"Maximize_templates"],
+  Cell[3488, 93, 455, 11, 30, "Input",ExpressionUUID->"0399d59f-c2e9-4d6a-a617-3c391ff742cc",
+   CellTags->"Maximize_templates"],
+  Cell[3946, 106, 456, 11, 34, "Output",ExpressionUUID->"b9fd08e9-fe84-4b27-9b28-4fe40862b1ec",
+   CellTags->"Maximize_templates"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"Maximize_templates", 25988, 621}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 401, 11, 150, "Text",ExpressionUUID->"05b52339-22a8-4215-8a14-7bcac347b3a3"],
+Cell[962, 33, 1271, 25, 136, "Input",ExpressionUUID->"38bf241b-32a5-43e0-a85f-64b593a91750"],
+Cell[2236, 60, 1227, 29, 30, "Input",ExpressionUUID->"031832e8-bdb6-4593-845c-5c6901e4a573",
+ CellTags->"Maximize_templates"],
+Cell[CellGroupData[{
+Cell[3488, 93, 455, 11, 30, "Input",ExpressionUUID->"0399d59f-c2e9-4d6a-a617-3c391ff742cc",
+ CellTags->"Maximize_templates"],
+Cell[3946, 106, 456, 11, 34, "Output",ExpressionUUID->"b9fd08e9-fe84-4b27-9b28-4fe40862b1ec",
+ CellTags->"Maximize_templates"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4439, 122, 996, 26, 30, "Input",ExpressionUUID->"5204c5ed-06cc-4477-8cd3-c7a0df18462d"],
+Cell[5438, 150, 501, 11, 34, "Output",ExpressionUUID->"8b549f28-3c70-4365-96aa-947d569bcf32"]
+}, Open  ]],
+Cell[5954, 164, 542, 10, 73, "Input",ExpressionUUID->"d07d5af6-7dbc-4cad-8294-5f5d2ae8fb7c"],
+Cell[CellGroupData[{
+Cell[6521, 178, 1307, 34, 30, "Input",ExpressionUUID->"dac2bf37-0a70-496c-9414-fbc132ab4edf"],
+Cell[7831, 214, 961, 17, 34, "Output",ExpressionUUID->"0a99a5a0-1bde-4f3d-8999-f8ba0e04f2e1"]
+}, Open  ]],
+Cell[8807, 234, 435, 9, 58, "Text",ExpressionUUID->"59a04e6b-68ad-4278-93a8-58879863e897"],
+Cell[CellGroupData[{
+Cell[9267, 247, 2836, 65, 73, "Input",ExpressionUUID->"88a62d9a-2285-4bdc-bbda-8bd6b2223880"],
+Cell[12106, 314, 3594, 66, 196, "Output",ExpressionUUID->"9fd89833-2bf8-4dd2-9e81-363f823cda04"]
+}, Open  ]],
+Cell[15715, 383, 243, 4, 58, "Text",ExpressionUUID->"a82a9edf-d33c-44fc-bdeb-f693d2ef3730"],
+Cell[CellGroupData[{
+Cell[15983, 391, 1764, 46, 52, "Input",ExpressionUUID->"77115a32-4708-4e8a-b551-5fbb305a3461"],
+Cell[17750, 439, 3039, 55, 183, "Output",ExpressionUUID->"30abb031-258f-42ad-a9ce-0399709e0130"]
+}, Open  ]],
+Cell[20804, 497, 204, 3, 35, "Text",ExpressionUUID->"e9bad6e9-8c32-4f9f-a8c4-c2c96c354dab"],
+Cell[CellGroupData[{
+Cell[21033, 504, 1763, 46, 52, "Input",ExpressionUUID->"fd667047-d50f-418d-85be-dbe9193d0dbb"],
+Cell[22799, 552, 2552, 48, 183, "Output",ExpressionUUID->"48dd52b4-541b-4258-93cb-f38b151d14ae"]
+}, Open  ]],
+Cell[25366, 603, 220, 4, 52, "Input",ExpressionUUID->"fcc6ed73-c956-4dcb-a96f-530b0685f066"]
+}
+]
+*)
+
